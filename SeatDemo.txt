@@ -1,0 +1,107 @@
+const renderSeats = () => {
+  const rows = ["A", "B", "C", "D"];
+  const columns = [1, 2, 3, 4, 5];
+
+  return (
+    <Grid container spacing={1} justifyContent="center">
+      <Grid item xs={12}>
+        <Typography variant="h6" align="center">
+          Rows
+        </Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container justifyContent="center">
+          {rows.map((row) => (
+            <Grid item key={row}>
+              <Box
+                component={Paper}
+                variant="outlined"
+                square
+                textAlign="center"
+                className="row-seat"
+              >
+                {row}
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container spacing={1} justifyContent="center">
+          {columns.map((column) => (
+            <Grid item key={column}>
+              <Box
+                component={Paper}
+                variant="outlined"
+                square
+                className={`seat ${
+                  selectedSeats.includes(`${rows[0]}${column}`) ? "selected" : ""
+                }`}
+                onClick={() => handleSeatClick(rows[0], column)}
+              >
+                {column}
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container spacing={1} justifyContent="center">
+          {columns.map((column) => (
+            <Grid item key={column}>
+              <Box
+                component={Paper}
+                variant="outlined"
+                square
+                className={`seat ${
+                  selectedSeats.includes(`${rows[1]}${column}`) ? "selected" : ""
+                }`}
+                onClick={() => handleSeatClick(rows[1], column)}
+              >
+                {column}
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container spacing={1} justifyContent="center">
+          {columns.map((column) => (
+            <Grid item key={column}>
+              <Box
+                component={Paper}
+                variant="outlined"
+                square
+                className={`seat ${
+                  selectedSeats.includes(`${rows[2]}${column}`) ? "selected" : ""
+                }`}
+                onClick={() => handleSeatClick(rows[2], column)}
+              >
+                {column}
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container spacing={1} justifyContent="center">
+          {columns.map((column) => (
+            <Grid item key={column}>
+              <Box
+                component={Paper}
+                variant="outlined"
+                square
+                className={`seat ${
+                  selectedSeats.includes(`${rows[3]}${column}`) ? "selected" : ""
+                }`}
+                onClick={() => handleSeatClick(rows[3], column)}
+              >
+                {column}
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+    </Grid>
+  );
+};
